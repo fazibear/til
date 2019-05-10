@@ -1,6 +1,9 @@
 # Today I Learned
 
-### 09.05.2019 Phoenix PubSub
+<details>
+<summary>
+09.05.2019 
+###Phoenix PubSub</summary>
 If you need a pubsub, to connect LiveViews for example just use YourAppWeb.Endpoint.
 
 ```elixir
@@ -16,3 +19,4 @@ def handle_info(%{event: "event", topic: "topic", payload: payload}) do
   # Do whatever you want
 end
 ```
+</details>
