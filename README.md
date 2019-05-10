@@ -1,9 +1,7 @@
 # Today I Learned
 
 <details>
-<summary>
-09.05.2019 
-###Phoenix PubSub</summary>
+<summary>09.05.2019 Phoenix PubSub</summary>
 If you need a pubsub, to connect LiveViews for example just use YourAppWeb.Endpoint.
 
 ```elixir
