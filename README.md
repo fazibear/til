@@ -24,19 +24,22 @@ end
 To nake service discoverable we need following services registered:
 
 ```elixir
-# create domain for an ip
-%Mdns.Server.Service{domain: "somedomain.local", data: :ip, ttl: 450, type: :a},
+[
+  # create domain for an ip
+  %Mdns.Server.Service{domain: "somedomain.local", data: :ip, ttl: 450, type: :a},
 
-# make device discoverable at all
-Mdns.Server.add_service(%Mdns.Server.Service{domain: "_services._dns-sd._udp.local",data: "SOME NAME._services._dns-sd._udp.local",ttl: 4500,type: :ptr})
+  # make service discoverable
+  %Mdns.Server.Service{domain: "_services._dns-sd._udp.local",data: "_ssh._tcp.local",ttl: 4500, type: :ptr},
 
-# register ssh service
-Mdns.Server.add_service(%Mdns.Server.Service{domain: "_ssh._tcp.local",data: "SOME NAME._ssh._tcp.local",ttl: 4500,type: :ptr})
+  # register ssh service
+  %Mdns.Server.Service{domain: "_ssh._tcp.local",data: "SOME NAME._ssh._tcp.local",ttl: 4500, type: :ptr},
 
-# point service to our domain and port (22)
-Mdns.Server.add_service(%Mdns.Server.Service{domain: "SOME NAME._ssh._tcp.local",data: {0,0,22, 'domain.local'},ttl: 4500,type: :srv})
 
-# empty txt service (some tools expext that)
-Mdns.Server.add_service(%Mdns.Server.Service{domain: "SOME NAME._ssh._tcp.local",data: [],ttl: 4500,type: :txt})
+  # point service to our domain and port (22)
+  %Mdns.Server.Service{domain: "SOME NAME._ssh._tcp.local",data: {0,0,22, 'domain.local'},ttl: 4500,type: :srv},
+
+  # empty txt service (some tools expext that)
+  %Mdns.Server.Service{domain: "SOME NAME._ssh._tcp.local",data: [],ttl: 4500,type: :txt})
+] |> Enum.each(&Mdns.Server.add_service/1)
 ```
 </details>
