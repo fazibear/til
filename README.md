@@ -34,9 +34,8 @@ To nake service discoverable we need following services registered:
   # register ssh service
   %Mdns.Server.Service{domain: "_ssh._tcp.local",data: "SOME NAME._ssh._tcp.local",ttl: 4500, type: :ptr},
 
-
   # point service to our domain and port (22)
-  %Mdns.Server.Service{domain: "SOME NAME._ssh._tcp.local",data: {0,0,22, 'domain.local'},ttl: 4500,type: :srv},
+  %Mdns.Server.Service{domain: "SOME NAME._ssh._tcp.local",data: {0,0,22, 'somedomain.local'},ttl: 4500,type: :srv},
 
   # empty txt service (some tools expext that)
   %Mdns.Server.Service{domain: "SOME NAME._ssh._tcp.local",data: [],ttl: 4500,type: :txt})
