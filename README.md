@@ -21,7 +21,7 @@ end
 
 <details>
 <summary>13.05.2019 Discover SSH service using mDNS</summary>
-To nake service discoverable we need following services registered:
+To make service discoverable we need following services registered:
 
 ```elixir
 [
@@ -40,5 +40,21 @@ To nake service discoverable we need following services registered:
   # empty txt service (some tools expext that)
   %Mdns.Server.Service{domain: "SOME NAME._ssh._tcp.local",data: [],ttl: 4500,type: :txt})
 ] |> Enum.each(&Mdns.Server.add_service/1)
+```
+</details>
+
+<details>
+<summary>16.05.2019 Get state of GenServer</summary>
+To get state of any process in erlang/elixir use `:sys.get_state/1`
+
+
+By name:
+```elixir
+:sys.get_state(MyGenServer)
+```
+
+By pid:
+```elixir
+:sys.get_state(pid)
 ```
 </details>
