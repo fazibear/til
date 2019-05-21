@@ -86,14 +86,4 @@ Item {
   }
 }
 ```
-
-By name:
-```elixir
-:sys.get_state(MyGenServer)
-```
-
-By pid:
-```elixir
-:sys.get_state(pid)
-```
 </details>
