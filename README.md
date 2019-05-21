@@ -68,6 +68,9 @@ By pid:
 
 <details>
 <summary>20.05.2019 Flip screen in QT5 QML</summary>
+
+QML COde:
+
 ```
 import QtWebEngine 1.5
 import QtQuick 2.10
