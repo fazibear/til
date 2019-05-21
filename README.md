@@ -1,6 +1,13 @@
 # Today I Learned
 
 <details>
+<summary>01.06.2018 Quit ssh session</summary>
+Just type: <enter>~.
+
+Yes, Enter, tilde and dot!
+</details>
+
+<details>
 <summary>09.05.2019 Phoenix PubSub</summary>
 If you need a pubsub, to connect LiveViews for example just use YourAppWeb.Endpoint.
 
@@ -47,6 +54,38 @@ To make service discoverable we need following services registered:
 <summary>16.05.2019 Get state of GenServer</summary>
 To get state of any process in erlang/elixir use `:sys.get_state/1`
 
+
+By name:
+```elixir
+:sys.get_state(MyGenServer)
+```
+
+By pid:
+```elixir
+:sys.get_state(pid)
+```
+</details>
+
+<details>
+<summary>20.05.2019 Flip screen in QT5 QML</summary>
+```
+import QtWebEngine 1.5
+import QtQuick 2.10
+import QtQuick.Layouts 1.3
+
+Item {
+  rotation: 90
+
+  StackLayout {
+    width: parent.height
+    height: parent.width
+    x: (parent.width - parent.height) / 2
+    y: -(parent.width - parent.height) / 2
+    Widget {}
+    Widget {}
+  }
+}
+```
 
 By name:
 ```elixir
