@@ -2,7 +2,7 @@
 
 <details>
 <summary>01.06.2018 Quit ssh session</summary>
-Just type: <enter>~.
+Just type: \<enter\>~.
 
 Yes, Enter, tilde and dot!
 </details>
